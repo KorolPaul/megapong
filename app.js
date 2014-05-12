@@ -1,6 +1,6 @@
 var http = require('http');
-/*var WebSocketServer = new require('ws'),
-    server = new WebSocketServer.Server({ port: 8080 });
+var WebSocketServer = new require('ws'),
+    server = new WebSocketServer.Server({ port: 8081 });
 
 var players = [];
 
@@ -17,11 +17,12 @@ server.on('connection', function (ws) {
 });
 
 console.log("Server started at 8080");
-*/
+
 var express = require('express'),
         app = express();
 app.get('/', function (req, res) {
-
+    console.log('Request received: ' + req.url);
+    res.send('Hello World!');
 });
 
 
