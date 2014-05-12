@@ -4,17 +4,6 @@ var WebSocketServer = new require('ws'),
 
 var players = [];
 
-
-var express = require('express'),
-        app = express();
-
-app.get('/', function (req, res) {
-    console.log('Request received: ' + req.url);
-    res.send('Hello World!');
-});
-
-app.listen('8081');
-
 server.on('connection', function (ws) {
     players[players.length++] = ws;
     console.log("new connection");
@@ -29,3 +18,12 @@ server.on('connection', function (ws) {
 
 console.log("Server started at 8080");
 
+var express = require('express'),
+        app = express();
+app.get('/', function (req, res) {
+    console.log('Request received: ' + req.url);
+    res.send('Hello World!');
+});
+
+
+app.listen('8080');
