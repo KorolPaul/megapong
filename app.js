@@ -1,19 +1,11 @@
-var http = require('http');
-var WebSocketServer = new require('ws'),
-    server = new WebSocketServer.Server({ port: 8080 });
+var express = require('express'),
+        app = express();
 
-var players = [];
-
-server.on('connection', function (ws) {
-    players[players.length++] = ws;
-    console.log("new connection");
-
-    ws.on('message', function(message) {
-        console.log(message);
-
-        for (key in players)
-            players[key].send(message);
-    });
+app.get('/', function (req, res) {
+    console.log('Request received: ' + req.url);
+    res.send('Hello World!');
 });
 
-console.log("Server started at 8080");
+
+app.listen('8080');
+console.log('Modulus demo app started on port 8080');
