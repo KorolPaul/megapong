@@ -1,0 +1,8 @@
+{
+  "name" : "MegaPong",
+  "version" : "1.0",
+  "dependencies" : {
+    "ws" : "~0.4.31",
+    node-static : ">0.1.0"
+  }
+}
