@@ -1,7 +1,7 @@
 {
   "name" : "MegaPong",
   "version" : "1.0",
-  "main" : "pong-server.js"
+  "main" : "pong-server.js", 
   "dependencies" : {
     "ws" : "0.4.31"
   }
