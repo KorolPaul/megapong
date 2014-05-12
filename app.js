@@ -1,12 +1,12 @@
 var http = require('http');
 var WebSocketServer = new require('ws'),
-    server = new WebSocketServer.Server({ port: 8081 });
+    server = new WebSocketServer.Server({ port: 8080 });
 
 var players = [];
 
 server.on('connection', function (ws) {
     players[players.length++] = ws;
-    console.log("новое соединение");
+    console.log("new connection");
 
     ws.on('message', function(message) {
         console.log(message);
@@ -16,4 +16,4 @@ server.on('connection', function (ws) {
     });
 });
 
-console.log("Сервер запущен на 8081");
+console.log("Server started at 8080");
