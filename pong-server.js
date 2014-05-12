@@ -1,5 +1,4 @@
 var http = require('http');
-var Static = require('node-static');
 var WebSocketServer = new require('ws'),
     server = new WebSocketServer.Server({ port: 8081 });
 
