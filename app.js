@@ -1,11 +1,15 @@
 var http = require('http'),
     server = require('socket.io').listen(http);
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(8080);
+var express = require('express'),
+        app = express();
 
+app.get('/', function (req, res) {
+    console.log('Request received: ' + req.url);
+    res.send('Hello World!');
+});
+
+app.listen('8080');
 http.listen(8081);
 
 var players = [];
