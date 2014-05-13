@@ -1,4 +1,4 @@
-var http = require('http').createServer(handler),
+var http = require('http'),
     server = require('socket.io').listen(http);
 
 http.listen(8081);
@@ -19,9 +19,7 @@ server.sockets.on('connection', function (ws) {
     });
 });
 
-console.log("Server started at 8080");
-
-function handler(req, res) {
-    res.writeHead(200);
-    res.end(data);
-}
+http.createServer(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World\n');
+}).listen(process.env.PORT);
