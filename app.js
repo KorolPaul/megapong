@@ -10,10 +10,10 @@ app.get('/', function (req, res) {
 app.listen(process.env.PORT);
 console.log('Modulus demo app started on port 8080');
 
-/*
+
 var http = require('http'),
     server = require('socket.io').listen(http);
-http.listen(8081);
+http.listen(8080);
 
 var players = [];
 
@@ -28,4 +28,4 @@ server.sockets.on('connection', function (ws) {
             players[key].emit('message', message);
     });
 });
-*/
+
