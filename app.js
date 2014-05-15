@@ -13,10 +13,10 @@ console.log('Modulus demo app started on port 8080');
 
 var http = require('http'),
     server = require('socket.io').listen(http);
-http.listen(8080);
+http.listen(process.env.PORT);
 
 var players = [];
-
+/*
 server.sockets.on('connection', function (ws) {
     players[players.length++] = ws;
     console.log("new connection");
@@ -29,3 +29,4 @@ server.sockets.on('connection', function (ws) {
     });
 });
 
+*/
