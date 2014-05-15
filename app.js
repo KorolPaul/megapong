@@ -1,6 +1,3 @@
-var http = require('http'),
-    server = require('socket.io').listen(http);
-
 var express = require('express'),
         app = express();
 
@@ -9,8 +6,13 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
+
 app.listen('8080');
-/*http.listen(8081);
+console.log('Modulus demo app started on port 8080');
+/*
+var http = require('http'),
+    server = require('socket.io').listen(http);
+http.listen(8081);
 
 var players = [];
 
