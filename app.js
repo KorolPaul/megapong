@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.listen(8080);
+app.listen(80);
 console.log('Modulus demo app started on port 8080');
 
 /*
