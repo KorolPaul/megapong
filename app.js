@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.listen('8080');
-http.listen(8081);
+/*http.listen(8081);
 
 var players = [];
 
@@ -24,5 +24,5 @@ server.sockets.on('connection', function (ws) {
         for (key in players)
             players[key].emit('message', message);
     });
-});
+});*/
 
