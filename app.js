@@ -1,4 +1,4 @@
-var express = require('express'),
+/*var express = require('express'),
         app = express();
 
 app.get('/', function (req, res) {
@@ -9,11 +9,11 @@ app.get('/', function (req, res) {
 
 app.listen('8080');
 console.log('Modulus demo app started on port 8080');
+*/
 
-/*
 var http = require('http'),
     server = require('socket.io').listen(http);
-http.listen(8081);
+http.listen(8080);
 
 var players = [];
 
@@ -28,4 +28,4 @@ server.sockets.on('connection', function (ws) {
             players[key].emit('message', message);
     });
 });
-*/
+
