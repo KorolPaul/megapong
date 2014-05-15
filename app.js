@@ -7,16 +7,16 @@ app.get('/', function (req, res) {
 });
 
 
-app.listen(process.env.PORT);
+app.listen(parseInt(process.env.PORT));
 console.log('Modulus demo app started on port 8080');
 
 
 var http = require('http'),
     server = require('socket.io').listen(http);
-http.listen(process.env.PORT);
+http.listen(parseInt(process.env.PORT));
 
 var players = [];
-/*
+
 server.sockets.on('connection', function (ws) {
     players[players.length++] = ws;
     console.log("new connection");
@@ -29,4 +29,3 @@ server.sockets.on('connection', function (ws) {
     });
 });
 
-*/
