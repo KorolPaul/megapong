@@ -1,3 +1,4 @@
+/*Static Server*/
 var express = require('express'),
         app = express();
 
@@ -11,6 +12,9 @@ app.listen(parseInt(process.env.PORT));
 console.log('Modulus demo app started on port 8080');
 
 
+/*WebSocket*/
+var socketIO = require('socket.io');
+
 var http = require('http');
 var httpServer = http.createServer(function (request, response) {
     request.addListener('end', function () {
@@ -20,7 +24,7 @@ var httpServer = http.createServer(function (request, response) {
 
 var players = [];
 var webSocket = socketIO.listen(httpServer);
-server.sockets.on('connection', function (ws) {
+webSocket.sockets.on('connection', function (ws) {
     players[players.length++] = ws;
     console.log("new connection");
 
