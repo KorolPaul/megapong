@@ -21,8 +21,8 @@ var httpServer = http.createServer(function (request, response) {
 //http.listen(parseInt(process.env.PORT));
 
 var players = [];
-var webSocket = socketIO.listen(httpServer);
-webSocket.on('connection', function (ws) {
+//var webSocket = socketIO.listen(httpServer);
+socketIO.on('connection', function (ws) {
     players[players.length++] = ws;
     console.log("new connection");
 
