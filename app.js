@@ -1,4 +1,4 @@
-/*var express = require('express'),
+var express = require('express'),
         app = express();
 
 app.get('/', function (req, res) {
@@ -6,11 +6,12 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-
-app.listen(parseInt(process.env.PORT));
+app.set('port', process.env.PORT);
+var server = app.listen(app.get('port'));
+//app.listen(parseInt(process.env.PORT));
 console.log('Modulus demo app started on port 8080');
-*/
-var socketIO = require('socket.io');
+
+var socketIO = require('socket.io').listen(server);
 var http = require('http');
 var httpServer = http.createServer(function (request, response) {
     request.addListener('end', function () {
