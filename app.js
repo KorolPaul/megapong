@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-app.set('port', process.env.PORT);
+app.set('port', parseInt(process.env.PORT));
 var server = app.listen(app.get('port'));
 //app.listen(parseInt(process.env.PORT));
 console.log('Modulus demo app started on port 8080');
