@@ -6,23 +6,21 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-app.set('port', parseInt(process.env.PORT));
-var server = app.listen(app.get('port'));
-//app.listen(parseInt(process.env.PORT));
+
+app.listen(parseInt(process.env.PORT));
 console.log('Modulus demo app started on port 8080');
 
-var socketIO = require('socket.io').listen(server);
+
 var http = require('http');
 var httpServer = http.createServer(function (request, response) {
     request.addListener('end', function () {
         clientFiles.serve(request, response);
     });
 }).listen(parseInt(process.env.PORT));
-//http.listen(parseInt(process.env.PORT));
 
 var players = [];
-//var webSocket = socketIO.listen(httpServer);
-socketIO.on('connection', function (ws) {
+var webSocket = socketIO.listen(httpServer);
+server.sockets.on('connection', function (ws) {
     players[players.length++] = ws;
     console.log("new connection");
 
